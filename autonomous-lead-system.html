@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Autonomous Southern Nevada Health Pass lead generation command center for Molina, SilverSummit, and Nevada Medicaid Fee-for-Service outreach.">
+  <title>SNHP Autonomous Lead Generation System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="automation">
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html">Southern Nevada Health Pass</a>
+      <div class="nav-links">
+        <a href="autonomous-lead-system.html">Automation System</a>
+        <a href="checklist.html">Checklist</a>
+        <a class="button button-small" href="tel:17028671223">Call 702-867-1223</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero automation-hero">
+      <div class="hero-content">
+        <p class="eyebrow">Autonomous lead engine</p>
+        <h1>Find, qualify, and follow up with 10 Medicaid leads per day.</h1>
+        <p class="lead">This browser-based command center creates the daily outreach queue, scores leads, generates channel-specific messages, schedules follow-ups, and exports the work needed to run SNHP's organic system across Facebook, Google Business Profile, Reddit, Nextdoor, partners, and short-form video.</p>
+        <div class="cta-row">
+          <button class="button" type="button" data-action="generate-day">Generate today's queue</button>
+          <button class="button button-secondary" type="button" data-action="export-csv">Export lead CSV</button>
+        </div>
+      </div>
+      <aside class="card metric-card" aria-live="polite">
+        <h2>Today's progress</h2>
+        <div class="metrics">
+          <div><strong id="metric-leads">0</strong><span>Leads</span></div>
+          <div><strong id="metric-qualified">0</strong><span>Qualified</span></div>
+          <div><strong id="metric-tasks">0</strong><span>Open tasks</span></div>
+          <div><strong id="metric-followups">0</strong><span>Follow-ups</span></div>
+        </div>
+        <p class="disclaimer">Automation stays privacy-safe: do not enter Medicaid IDs, diagnoses, birth dates, or card photos.</p>
+      </aside>
+    </section>
+
+    <section class="section automation-grid">
+      <article class="card form-card">
+        <h2>Lead intake and scoring</h2>
+        <form id="lead-form">
+          <label for="lead-name">Name</label>
+          <input id="lead-name" name="name" autocomplete="name" placeholder="First name or initials">
+
+          <label for="lead-phone">Phone</label>
+          <input id="lead-phone" name="phone" autocomplete="tel" placeholder="702-000-0000">
+
+          <label for="lead-plan">Plan</label>
+          <select id="lead-plan" name="plan">
+            <option>Molina Healthcare of Nevada</option>
+            <option>SilverSummit Healthplan</option>
+            <option>Nevada Medicaid Fee-for-Service</option>
+            <option>Not sure</option>
+          </select>
+
+          <label for="lead-source">Source</label>
+          <select id="lead-source" name="source">
+            <option>Facebook group</option>
+            <option>Google Business Profile</option>
+            <option>TikTok / Reel / Short</option>
+            <option>Reddit / Nextdoor</option>
+            <option>Community partner</option>
+            <option>Website checklist</option>
+          </select>
+
+          <label for="lead-need">Need</label>
+          <select id="lead-need" name="need">
+            <option>Benefit checklist</option>
+            <option>Transportation / rides</option>
+            <option>Wellness rewards</option>
+            <option>Pregnancy or baby resources</option>
+            <option>OTC / healthy extras</option>
+            <option>Provider or card help</option>
+          </select>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="lead-opt-in" name="optIn">
+            Member gave permission for SNHP to call or text about this benefits question.
+          </label>
+
+          <button class="button" type="submit">Save and schedule follow-up</button>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2>Autonomous daily queue</h2>
+        <p>The system creates a balanced queue designed to produce 10 qualified leads per day without paid ads.</p>
+        <div id="task-list" class="task-list"></div>
+      </article>
+    </section>
+
+    <section class="section automation-grid">
+      <article class="card">
+        <h2>Message generator</h2>
+        <label for="message-channel">Channel</label>
+        <select id="message-channel">
+          <option>Facebook group post</option>
+          <option>Helpful comment reply</option>
+          <option>Partner outreach</option>
+          <option>Google Business Profile post</option>
+          <option>Short-form video script</option>
+        </select>
+        <label for="message-plan">Plan focus</label>
+        <select id="message-plan">
+          <option>Molina Healthcare of Nevada</option>
+          <option>SilverSummit Healthplan</option>
+          <option>Nevada Medicaid Fee-for-Service</option>
+          <option>All target plans</option>
+        </select>
+        <button class="button" type="button" data-action="generate-message">Generate message</button>
+        <textarea id="generated-message" rows="9" aria-label="Generated outreach message"></textarea>
+        <button class="button button-secondary" type="button" data-action="copy-message">Copy message</button>
+      </article>
+
+      <article class="card">
+        <h2>Follow-up queue</h2>
+        <p>Every saved lead receives an automatic same-day follow-up task and a next-day reminder if still open.</p>
+        <div id="followup-list" class="task-list"></div>
+      </article>
+    </section>
+
+    <section class="section muted">
+      <div class="section-heading">
+        <p class="eyebrow">Lovable-ready</p>
+        <h2>Production upgrade path</h2>
+        <p>This static command center is ready for immediate use. The <code>lovable/</code> folder adds the SNHP Lovable prompt, Supabase schema, and launch checklist for turning it into a full autonomous app with authentication, database storage, edge functions, and approved messaging integrations.</p>
+      </div>
+      <a class="button" href="lovable/snhp-autonomous-lead-system-prompt.md">Open Lovable prompt</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Southern Nevada Health Pass autonomous lead generation system. Benefits vary by eligibility, plan, date, and plan rules.</p>
+  </footer>
+  <script src="automation.js"></script>
+</body>
+</html>
